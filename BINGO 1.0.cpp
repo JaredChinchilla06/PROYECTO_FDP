@@ -175,7 +175,7 @@ int main() {
     cout << "* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n";    
         break;
     case 3:
-    cout << "Sos culero";
+    cout << "";
         break;
     default:
     cout << "Opcion invalida \n";

@@ -126,25 +126,25 @@ bool turnoJugador(int carta[NUM_FILAS][NUM_COLUMNAS], int numero, const string& 
 
 // Función para la bienvenida
 int bienvenida() {
-    int option;
+    int bingoption;
     do {
         cout << " Bienvenido a BINGO \n";
         cout << "* * * * * * * * * * * \n";
         cout << "* 1. Jugar          * \n";
-        cout << "* 2. Como jugar?   * \n";
+        cout << "* 2. Como jugar?    * \n";
         cout << "* 3. Ranking        * \n";
         cout << "* 4. Salir          * \n";
         cout << "* * * * * * * * * * * \n";
         cout << "Opcion: ";
-        cin >> option;
+        cin >> bingoption;
 
-        if (cin.fail() || option < 1 || option > 3) {
+        if (cin.fail() || bingoption < 1 || bingoption > 3) {
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
             cout << "Opcion invalida. Por favor, elige una opcion valida.\n";
         }
-    } while (option < 1 || option > 3);
-    return option;
+    } while (bingoption < 1 || bingoption > 3);
+    return bingoption;
 }
 
 // Función para mostrar las reglas
@@ -200,7 +200,7 @@ void mostrarRanking(const map<string, int>& ranking) {
 
 // Función principal del juego (modificada para incorporar el ranking)
 // Función principal del juego (modificada para no mostrar el ranking)
-void jugar(const string& archivoRanking) {
+void jugarbingo(const string& archivoRanking) {
     // Leer ranking actual desde el archivo
     map<string, int> ranking = leerRanking(archivoRanking);
 
@@ -260,7 +260,7 @@ int main() {
         opcion = bienvenida();
         switch (opcion) {
             case 1:
-                jugar(archivoRanking);
+                jugarbingo(archivoRanking);
                 break;
             case 2:
                 mostrarReglas();
